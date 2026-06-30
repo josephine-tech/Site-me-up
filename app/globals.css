@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #3d5d4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-container px-6 md:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-charcoal/10 bg-white/70 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-charcoal/90 hover:shadow-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-sage focus-visible:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-6 py-3.5 text-sm font-semibold text-charcoal transition-all duration-300 hover:border-charcoal/30 hover:shadow-soft;
+  }
+
+  .card {
+    @apply rounded-3xl border border-charcoal/10 bg-white shadow-soft;
+  }
+
+  .section {
+    @apply py-20 md:py-28;
+  }
+
+  .h-display {
+    @apply font-heading font-bold tracking-tightest text-charcoal;
+  }
+}
+
+/* Editorial gradient text */
+.text-gradient {
+  background: linear-gradient(120deg, #3d5d4d 0%, #75a591 60%, #e37156 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle grain / glass surfaces */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.noise-bg {
+  position: relative;
+}
+
+/* Hide scrollbar utility for marquees */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background: #75a591;
+  color: #ffffff;
+}
