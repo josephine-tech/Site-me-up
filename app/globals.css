@@ -72,7 +72,7 @@ body {
 
 /* Editorial gradient text */
 .text-gradient {
-  background: linear-gradient(120deg, #3d5d4d 0%, #75a591 60%, #d3235e 130%);
+  background: linear-gradient(120deg, #3d5d4d 0%, #75a591 60%, #e37156 130%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -14,8 +14,8 @@ const config: Config = {
         sage: "#75A591",
         beige: "#F5F1EB",
         // Secondary
-        terracotta: "#D3235E",
-        burnt: "#E59996",
+        terracotta: "#E37156",
+        burnt: "#EB965C",
         peach: "#F5D3C8",
         teal: "#2A2F5F",
       },

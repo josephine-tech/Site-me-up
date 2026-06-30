@@ -22,8 +22,8 @@ Built to feel like a $500–$2,000 product, then reveal a $50 price.
 | Sage Green | `#75A591` | primary accent |
 | Warm Beige | `#F5F1EB` | soft surfaces |
 | White | `#FFFFFF` | base |
-| Terracotta | `#D3235E` | high-energy accent / CTAs |
-| Burnt Orange | `#E59996` | secondary |
+| Terracotta | `#E37156` | high-energy accent / CTAs |
+| Burnt Orange | `#EB965C` | secondary |
 | Soft Peach | `#F5D3C8` | secondary |
 | Deep Teal | `#2A2F5F` | secondary dark |
 
