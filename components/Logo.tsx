@@ -1,36 +1,48 @@
 import Link from "next/link";
 
-export function Logo({ className = "" }: { className?: string }) {
+/**
+ * Site Me Up brand mark — an ascending "steps + 1" monochrome icon,
+ * reconstructed as vector from the brand guide, paired with the
+ * "SITE ME UP" wordmark set in Space Grotesk.
+ */
+export function LogoMark({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 131 96"
+      className={className}
+      fill="currentColor"
+      aria-hidden
+    >
+      {/* the "1" */}
+      <path d="M97.5 2 L126.1 2 L126.1 94 L106.6 94 L106.6 24 L78 24 Z" />
+      {/* ascending steps */}
+      <path d="M53.3 43 L91 43 L91 94 L5.2 94 L18.2 81 L71.5 81 L71.5 61 L40.3 61 Z" />
+    </svg>
+  );
+}
+
+export function Logo({
+  className = "",
+  variant = "dark",
+  showWordmark = true,
+}: {
+  className?: string;
+  variant?: "dark" | "light";
+  showWordmark?: boolean;
+}) {
+  const color = variant === "light" ? "text-white" : "text-charcoal";
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-2.5 ${className}`}
+      className={`group inline-flex items-center gap-2.5 ${color} ${className}`}
       aria-label="Site Me Up home"
     >
-      <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-charcoal text-white transition-transform duration-300 group-hover:scale-105">
-        <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-sage/40 to-transparent" />
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="relative"
-          aria-hidden
-        >
-          <path
-            d="M4 7.5C4 5.567 5.567 4 7.5 4H20v8.5C20 14.433 18.433 16 16.5 16H4V7.5Z"
-            fill="currentColor"
-            opacity="0.45"
-          />
-          <path
-            d="M8 12.5C8 10.567 9.567 9 11.5 9H24v8.5c0 1.933-1.567 3.5-3.5 3.5H8v-8.5Z"
-            fill="currentColor"
-          />
-        </svg>
-      </span>
-      <span className="font-heading text-[17px] font-bold tracking-tight text-charcoal">
-        Site Me Up
-      </span>
+      <LogoMark className="h-6 w-auto transition-transform duration-300 group-hover:-translate-y-0.5" />
+      {showWordmark && (
+        <span className="font-heading text-[15px] font-bold uppercase tracking-[0.14em]">
+          Site Me Up
+        </span>
+      )}
     </Link>
   );
 }
